@@ -25,5 +25,5 @@ while continue_running:
         for drink in coff_mach_menu.menu:
             if drink.name == choice:
                 if coff_mach.is_resource_sufficient(drink):
-                    bank.make_payment(drink.cost)
-                    coff_mach.make_coffee(drink)
+                    if bank.make_payment(drink.cost):
+                        coff_mach.make_coffee(drink)
