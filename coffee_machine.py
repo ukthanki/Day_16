@@ -10,7 +10,7 @@ bank = MoneyMachine()
 continue_running = True
 
 while continue_running:
-    choice = input("What would you like to do? (items/espresso/latte/cappuccino/report/off): ")
+    choice = input("What would you like to do? (items/espresso/latte/cappuccino/report/replenish/off): ")
     if choice == "off":
         continue_running = False
         print("Machine Shutdown")
@@ -19,6 +19,8 @@ while continue_running:
     elif choice == "report":
         coff_mach.report()
         bank.report()
+    elif choice == "replenish":
+        coff_mach.replenish()
     elif choice == "espresso" or choice == "latte" or choice == "cappuccino":
         for drink in coff_mach_menu.menu:
             if drink.name == choice:

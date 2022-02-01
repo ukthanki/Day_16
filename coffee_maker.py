@@ -1,5 +1,6 @@
 class CoffeeMaker:
     """Models the machine that makes the coffee"""
+
     def __init__(self):
         self.resources = {
             "water": 300,
@@ -27,3 +28,10 @@ class CoffeeMaker:
         for item in order.ingredients:
             self.resources[item] -= order.ingredients[item]
         print(f"Here is your {order.name} ☕️. Enjoy!")
+
+    def replenish(self):
+        self.resources = {
+            "water": 300,
+            "milk": 200,
+            "coffee": 100,
+        }
